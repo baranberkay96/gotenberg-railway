@@ -1,10 +1,10 @@
-# Gotenberg 9.9 PDF Conversion API: Railway template spec
+# Gotenberg 9 PDF Conversion API: Railway template spec
 
 ## Listing
 
 | Field | Value |
 |---|---|
-| Name | **Gotenberg 9.9 PDF Conversion API** (pinned minor in the name) |
+| Name | **Gotenberg 9 PDF Conversion API** (pinned minor in the name) |
 | Description | HTML, URL, Markdown and Office to PDF API with basic auth enabled. (66 chars) |
 | Category | Other |
 | Tags | gotenberg, pdf, html-to-pdf, office-to-pdf, chromium, libreoffice, document-conversion, api |
@@ -21,7 +21,7 @@
 
 ### Improvements over market templates
 
-- Gotenberg 9.9.1 (current stable, released 2026-11-20) pinned by digest instead of the floating `:8` tag (8.40.0, the last 8.x, is frozen).
+- Gotenberg 9.1 (current stable, released 2026-11-20) pinned by digest instead of the floating `:8` tag (8.40.0, the last 8.x, is frozen).
 - Basic auth on by default with a generated 32-character password; `/health` stays public for the healthcheck.
 - Start script: invalid `PORT`, `API_TIMEOUT`, `API_BODY_LIMIT`, `LOG_LEVEL` or boolean values fall back with a warning (Gotenberg itself exits on them); an unusable password locks the API with a random one instead of crashing or opening it; turning auth off is refused while a public domain is attached.
 - `/health` healthcheck, `ALWAYS` restart policy, 90 s request timeout (upstream 30 s) for larger Office files.
