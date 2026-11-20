@@ -65,7 +65,7 @@ One repo-built service: `FROM gotenberg/gotenberg:9.9.1@sha256:…` plus `railwa
 
 ## Resource profile
 
-See the measured figures in the round-12 report and the README. Estimate: RAM_IDLE idle, up to 1 GB while converting large documents; CPU bursts per conversion. At Railway prices (RAM $10/GB-month, vCPU $20/month) an idle instance costs about $3-5/month; busy instances more. Minimum plan: Trial (1 GB per service) for typical documents.
+See the measured figures in the round-12 report and the README. Measured: 0.37 GB idle with both engines started, CPU ~0 idle, up to 1 GB while converting large documents; CPU bursts per conversion. At Railway prices (RAM $10/GB-month, vCPU $20/month) an idle instance costs about $3-5/month; busy instances more. Minimum plan: Trial (1 GB per service) for typical documents.
 
 ## Verification checklist
 

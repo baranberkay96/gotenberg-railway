@@ -66,7 +66,7 @@ Services in the same Railway project can call `http://gotenberg.railway.internal
 
 **Resources and plans**
 
-Measured on Railway: about RAM_IDLE idle with both engines started, RAM_BUSY while converting. It fits the Trial plan (1 GB per service) for typical documents; large spreadsheets or long web pages need more. Set `CHROMIUM_AUTO_START=false` and `LIBREOFFICE_AUTO_START=false` on the Free plan (0.5 GB).
+Measured on Railway: about 0.37 GB idle with both engines started (0.22 GB right after boot), with short spikes while converting. It fits the Trial plan (1 GB per service) for typical documents; large spreadsheets or long web pages need more. Set `CHROMIUM_AUTO_START=false` and `LIBREOFFICE_AUTO_START=false` on the Free plan (0.5 GB).
 
 **Scaling and upgrades**
 
