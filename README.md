@@ -2,7 +2,7 @@
 
 [![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/gotenberg-9-pdf-conversion-api?referralCode=20H68q)
 
-Gotenberg is an open-source API that converts HTML, URLs, Markdown and Office documents (Word, Excel, PowerPoint and about 100 other formats) to PDF, and merges, splits, stamps, signs and converts PDFs. This template runs Gotenberg 9.1 with HTTP basic auth switched on and a generated password.
+Gotenberg is an open-source API that converts HTML, URLs, Markdown and Office documents (Word, Excel, PowerPoint and about 100 other formats) to PDF, and merges, splits, stamps, signs and converts PDFs. This template runs Gotenberg 9.9.1 with HTTP basic auth switched on and a generated password.
 
 > Community template, not affiliated with the Gotenberg project.
 
