@@ -21,7 +21,7 @@
 
 ### Improvements over market templates
 
-- Gotenberg 9.1 (current stable, released 2026-11-20) pinned by digest instead of the floating `:8` tag (8.40.0, the last 8.x, is frozen).
+- Gotenberg 9.10.0 (current stable, released 2026-11-24; first pinned 9.9.1 on 2026-11-20) pinned by digest instead of the floating `:8` tag (8.40.0, the last 8.x, is frozen).
 - Basic auth on by default with a generated 32-character password; `/health` stays public for the healthcheck.
 - Start script: invalid `PORT`, `API_TIMEOUT`, `API_BODY_LIMIT`, `LOG_LEVEL` or boolean values fall back with a warning (Gotenberg itself exits on them); an unusable password locks the API with a random one instead of crashing or opening it; turning auth off is refused while a public domain is attached.
 - `/health` healthcheck, `ALWAYS` restart policy, 90 s request timeout (upstream 30 s) for larger Office files.
@@ -31,11 +31,11 @@
 
 | Component | Pin | Released | Checked |
 |---|---|---|---|
-| Gotenberg | `gotenberg/gotenberg:9.9.1@sha256:0fc05327fcc4af8ba84bb99b3da35fe728840d98cef9d3bf0d701bd077834eb5` | 2026-11-20 | 2026-11-20 |
+| Gotenberg | `gotenberg/gotenberg:9.10.0@sha256:2ce6fcd3f5019c82b0376065b9103d6d4938d34c1c06a39a8263a9fcf47a6f5b` | 2026-11-24 | 2026-11-24 |
 
 ## Architecture
 
-One repo-built service: `FROM gotenberg/gotenberg:9.9.1@sha256:…` plus `railway-start.sh`, which validates the variables and `exec`s `gotenberg --api-port-from-env=PORT` under tini, as the image's unprivileged `gotenberg` user. No volume (stateless), public domain on port 3000.
+One repo-built service: `FROM gotenberg/gotenberg:9.10.0@sha256:…` plus `railway-start.sh`, which validates the variables and `exec`s `gotenberg --api-port-from-env=PORT` under tini, as the image's unprivileged `gotenberg` user. No volume (stateless), public domain on port 3000.
 
 ## Services
 
@@ -70,7 +70,7 @@ See the measured figures in the round-12 report and the README. Measured: 0.37 G
 ## Verification checklist
 
 1. `/health` returns 200 with `chromium` and `libreoffice` up.
-2. `/version` without credentials returns 401; with credentials returns `9.9.1`.
+2. `/version` without credentials returns 401; with credentials returns `9.10.0`.
 3. HTML to PDF (`/forms/chromium/convert/html`) returns a PDF.
 4. DOCX to PDF (`/forms/libreoffice/convert`) returns a PDF.
 5. A 5-character password: service starts, API locked, log explains the fix.
@@ -79,3 +79,7 @@ See the measured figures in the round-12 report and the README. Measured: 0.37 G
 ## Open questions
 
 - Gotenberg 9 ships a minor release almost daily; this pin should be refreshed now and then. Clients built for Gotenberg 8 PDF-engine routes need the upgrade guide.
+
+## Update 2026-11-24: 9.9.1 → 9.10.0
+
+Gotenberg published eight GitHub advisories on 2026-11-22 that affect 9.9.1 (fixed in 9.9.2/9.9.3): three high (CPU/memory exhaustion past the API timeout, unbounded Markdown template execution, Web Worker `file://` reads that need `--chromium-allow-file-access-from-files`, which this template does not set), medium ones (DevTools endpoint reachable from conversion content, response sent to the wrong request after a hard timeout, ZIP filename sanitising) and lows. Basic auth is forced on the public domain, so the unauthenticated ones need credentials here. Bumped the pin to 9.10.0 (includes all fixes; adds opt-in `showTrackedChanges`). The flags railway-start.sh sets are unchanged between the tags.

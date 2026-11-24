@@ -2,7 +2,7 @@
 
 [![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/gotenberg-9-pdf-conversion-api?referralCode=20H68q)
 
-Gotenberg is an open-source API that converts HTML, URLs, Markdown and Office documents (Word, Excel, PowerPoint and about 100 other formats) to PDF, and merges, splits, stamps, signs and converts PDFs. This template runs Gotenberg 9.9.1 with HTTP basic auth switched on and a generated password.
+Gotenberg is an open-source API that converts HTML, URLs, Markdown and Office documents (Word, Excel, PowerPoint and about 100 other formats) to PDF, and merges, splits, stamps, signs and converts PDFs. This template runs Gotenberg 9.10.0 with HTTP basic auth switched on and a generated password.
 
 > Community template, not affiliated with the Gotenberg project.
 
@@ -22,7 +22,7 @@ Upstream Gotenberg has no authentication by default, so a public instance conver
 
 ## Dependencies for Gotenberg Hosting
 
-- Gotenberg service (repo build on the official `gotenberg/gotenberg:9.9.1` image, pinned by digest)
+- Gotenberg service (repo build on the official `gotenberg/gotenberg:9.10.0` image, pinned by digest)
 - No database, no volume: Gotenberg keeps nothing between requests
 
 ### Deployment Dependencies
@@ -35,7 +35,7 @@ Upstream Gotenberg has no authentication by default, so a public instance conver
 
 | Service | Image | Purpose |
 |---|---|---|
-| Gotenberg | `gotenberg/gotenberg:9.9.1` + start script | Conversion API on port 3000, public HTTPS domain |
+| Gotenberg | `gotenberg/gotenberg:9.10.0` + start script | Conversion API on port 3000, public HTTPS domain |
 
 **First steps**
 

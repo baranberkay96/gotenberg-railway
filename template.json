@@ -14,8 +14,8 @@
   ],
   "image": "https://cdn.jsdelivr.net/gh/gotenberg/art@10017bee591595ad27a1b31ce1958400ad0b519a/logo.png",
   "upstream": {
-    "gotenberg": "gotenberg/gotenberg 9.9.1 (released 2026-11-20, latest stable), image gotenberg/gotenberg:9.9.1@sha256:0fc05327fcc4af8ba84bb99b3da35fe728840d98cef9d3bf0d701bd077834eb5",
-    "checked": "2026-11-20"
+    "gotenberg": "gotenberg/gotenberg 9.10.0 (released 2026-11-24, latest stable; fixes the GHSA advisories of 2026-11-22 that affect 9.9.1), image gotenberg/gotenberg:9.10.0@sha256:2ce6fcd3f5019c82b0376065b9103d6d4938d34c1c06a39a8263a9fcf47a6f5b",
+    "checked": "2026-11-24"
   },
   "services": {
     "Gotenberg": {
